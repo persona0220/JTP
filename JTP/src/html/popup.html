@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>Jong Tab Project</title>
+<meta charset="UTF-8"/>
+
+<link rel="stylesheet" href="../css/defaults.css">
+<link rel="stylesheet" href="../css/popup.css">
+<link rel="stylesheet" href="../css/jquery-ui.css">
+<link rel="stylesheet" href="../css/preview.css">
+
+<script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery-ui.js"></script>
+
+<script type="text/javascript" src="../js/popup.js"></script>
+<script type="text/javascript" src="../js/tab_div.js"></script>
+<script type="text/javascript" src="../js/preview.js"></script>
+
+<script src="../js/jquery/jquery-ui.js"></script>
+
+<body>
+<div class="title">Jong Tab Project <span id="error-message"></span></div>
+
+<div class="command-line">
+
+  <button id="order">ORDER</button>
+  <button id="find">FIND</button>
+  <button id="save">SAVE</button>
+  <button id="open">OPEN</button>
+
+  <div id="field"></div>
+
+  <div id="option-order" style="display:none">
+    <button class="option-button" val="URL">URL</button> <button class="option-button">TIME</button> <button class="option-button">TITLE</button>
+  </div>
+
+  <div id="option-find" style="display:none">
+    <input type="text" id="keyword" placeholder="keyword"> <button class="option-button">FIND</button>
+  </div>
+
+  <div id="option-save" style="display:none">
+    <input type="text" id="savedList" placeholder="ListName"> </input>
+    <button id="submit">SAVE</button>
+  </div>
+
+  <div id="option-open" style="display:none">
+    <select id="selectlist"> </select>
+    <button id="openall">OPEN</button>
+  </div>
+
+</div>
+<div class="preview">
+  <div class="title">Preview Your Tabs</div>
+  <div id="tab-list"></div>
+</div>
+
+<div id="guideline"></div>
+</body>
+
+</html>

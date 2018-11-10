@@ -1,0 +1,126 @@
+$deep_yellow: #FFBF00;
+$dark_gray: #424242;
+$light_gray: #dcdcdc;
+$error_red: #EE5757;
+$pinkish-gray: #bdbdbd;
+$warm-gray: #757575;
+$white-two: #dcdcdc;
+$white-four: #eeeeee;
+$gold: #b99458;
+
+body {
+  margin: 0 auto;
+  width: 600px;
+  color: $dark_gray;
+
+  > .preview {
+    margin: 10px;
+
+    > .title {
+      margin: 0 1.5%;
+      font-size: 18px;
+      font-weight: bold;
+      color: $gold;
+    }
+  }
+}
+
+#tab-list {
+  border-radius: 4px;
+  height: 90%;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > .tab {
+    position: relative;
+    float: left;
+    margin: 10px 1.5%;
+    width: 100%;
+    cursor: pointer;
+
+    > .delete {
+      display: none;
+      position: absolute;
+      top: -7px;
+      right: -7px;
+
+      width: 20px;
+      height: 20px;
+      background: {
+        image: url('../../resources/delete.png');
+        repeat: no-repeat;
+        size: 20px;
+      }
+      cursor: pointer;
+    }
+
+    > .cover {
+      padding: 8px;
+      height: 30px;
+      line-height: 30px;
+      background-color: $dark_gray;
+      color: white;
+
+      > .favicon {
+        float: left;
+        margin-right: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      > .title {
+        float: left;
+        width: calc(100% - 38px);
+
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
+      }
+    }
+
+    > .content {
+      padding: 3px;
+      height: 100px;
+      line-height: 11px;
+      background-color: $white-four;
+      box-sizing: border-box;
+      text-align: center;
+
+      > .screen {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+
+    > .url {
+      padding: 3px;
+      height: 90px;
+      line-height: 11px;
+      background-color: $white-four;
+
+      font-size: 8px;
+      overflow: hidden;
+    }
+
+    &.active {
+      > .cover {
+        background-color: $deep_yellow;
+      }
+    }
+
+    &:hover {
+      transition: box-shadow .3s ease-out;
+      box-shadow : 0 0 10px;
+
+      > .delete {
+        display: block;
+      }
+    }
+  }
+}

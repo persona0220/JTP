@@ -1,0 +1,202 @@
+html, body {
+  height: 100%; }
+
+#left-side {
+  float: left;
+  padding: 20px;
+  max-width: 300px;
+  width: 30vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #282727;
+  font-family: SimplonBold; }
+  #left-side > .logo {
+    width: 100%;
+    height: 10%;
+    max-height: 10%;
+    background-image: url("../../resources/logo_gold.png");
+    background-repeat: no-repeat;
+    background-size: 70%; }
+  #left-side > .merge-info {
+    clear: both;
+    font-size: 24px;
+    line-height: 26px;
+    color: white;
+    cursor: pointer; }
+
+#right-side {
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 68vw;
+  height: 100vh; }
+
+.right-btn {
+  margin: 5px 1.5%;
+  border: 1px solid #b99458;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b99458;
+  cursor: pointer; }
+  .right-btn:hover {
+    transition: background-color .3s ease-out;
+    background-color: #b99458;
+    color: white; }
+
+#tab-list {
+  height: 90%;
+  overflow: scroll; }
+  #tab-list::-webkit-scrollbar {
+    display: none; }
+  #tab-list > .tab {
+    position: relative;
+    float: left;
+    margin: 10px 1.5%;
+    width: 30%;
+    cursor: pointer; }
+    #tab-list > .tab > .delete {
+      display: none;
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../resources/delete.png");
+      background-repeat: no-repeat;
+      background-size: 20px;
+      cursor: pointer; }
+    #tab-list > .tab > .cover {
+      padding: 8px;
+      height: 30px;
+      line-height: 30px;
+      background-color: #323232;
+      color: white; }
+      #tab-list > .tab > .cover > .favicon {
+        float: left;
+        margin-right: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 15px; }
+      #tab-list > .tab > .cover > .title {
+        float: left;
+        width: calc(100% - 38px);
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre; }
+    #tab-list > .tab > .content {
+      padding: 3px;
+      height: 130px;
+      background-color: #eeeeee;
+      box-sizing: border-box;
+      text-align: center; }
+      #tab-list > .tab > .content > .screen {
+        max-width: 100%;
+        height: 100%; }
+    #tab-list > .tab > .url {
+      padding: 11px;
+      height: 130px;
+      background-color: #eeeeee;
+      box-sizing: border-box;
+      font-size: 14px;
+      overflow: hidden; }
+    #tab-list > .tab.active > .cover {
+      background-color: #FFBF00; }
+    #tab-list > .tab:hover {
+      transition: box-shadow .3s ease-out;
+      box-shadow: 0 0 10px; }
+      #tab-list > .tab:hover > .delete {
+        display: block; }
+
+#list-set {
+  height: 90%;
+  overflow: scroll; }
+  #list-set::-webkit-scrollbar {
+    display: none; }
+  #list-set > .list-name {
+    overflow: hidden;
+    margin-bottom: 10px;
+    clear: both;
+    font-size: 24px;
+    line-height: 26px;
+    color: white;
+    cursor: pointer; }
+    #list-set > .list-name.active {
+      color: #b99458; }
+    #list-set > .list-name > .name {
+      float: left;
+      width: calc(100% - 60px); }
+      #list-set > .list-name > .name.editing {
+        border: 1px solid #EE5757; }
+    #list-set > .list-name > .delete, #list-set > .list-name > .edit {
+      float: right;
+      display: none;
+      margin: 3px;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      cursor: pointer; }
+      #list-set > .list-name > .delete.edit, #list-set > .list-name > .edit.edit {
+        background-image: url("../../resources/list_edit.png"); }
+      #list-set > .list-name > .delete.delete, #list-set > .list-name > .edit.delete {
+        background-image: url("../../resources/list_delete.png"); }
+    #list-set > .list-name:hover > .delete, #list-set > .list-name:hover > .edit {
+      display: block; }
+
+#pick-color {
+  overflow: hidden;
+  margin-bottom: 10px; }
+  #pick-color > .color_0 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_0.png");
+    background-size: 20px;
+    cursor: pointer; }
+  #pick-color > .color_1 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_1.png");
+    background-size: 20px;
+    cursor: pointer; }
+  #pick-color > .color_2 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_2.png");
+    background-size: 20px;
+    cursor: pointer; }
+  #pick-color > .color_3 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_3.png");
+    background-size: 20px;
+    cursor: pointer; }
+  #pick-color > .color_4 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_4.png");
+    background-size: 20px;
+    cursor: pointer; }
+  #pick-color > .color_5 {
+    float: left;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../resources/favicon/favi_color_5.png");
+    background-size: 20px;
+    cursor: pointer; }
+
+/*# sourceMappingURL=dashboard.css.map */
