@@ -70,13 +70,13 @@ function handleOpen(option, keyword) {
   if (!keyword) {
     insertErrorMessage("input any keyword");
   	return;
-	}
+  }
   if (option === CONST_URL) {
     if (!(keyword.substr(0, 8) === 'https://' || keyword.substr(0, 7) === 'http://')) {
       keyword = 'http://' + keyword;
     }
     chrome.tabs.create({"url": keyword, "selected": true});
-  } else if (option === CONST_SAVED){
+  } else if (option === CONST_SAVED) {
     var value = localStorage.getItem(keyword);
     if(value != null){
       var savedList = JSON.parse(value);
