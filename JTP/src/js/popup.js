@@ -43,7 +43,7 @@ function doFind(){
   $('.option-button').click(function () {
     //TODO: 여러 탭에서 검색하는 기능 구현 --> 검색 일치하는 탭들만 색 변경해주기
       var keyword = $('#keyword').val();
-      background.handleWindow('title', keyword);
+      background.handleWindow('all', keyword);
     //위에서 생겨난 옵션들 파괴
     deleteOption(this);
   })
