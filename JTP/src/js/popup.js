@@ -39,10 +39,11 @@ function doFind(){
 
   addOption('find');
 
-  var keyword = $('#keyword');
+
   $('.option-button').click(function () {
     //TODO: 여러 탭에서 검색하는 기능 구현 --> 검색 일치하는 탭들만 색 변경해주기
-
+      var keyword = $('#keyword').val();
+      background.handleWindow('title', keyword);
     //위에서 생겨난 옵션들 파괴
     deleteOption(this);
   })
@@ -127,6 +128,7 @@ function doOpen(){
     }
 
     $('#selectlist').empty();
+    $('#selectlist').append("<option>---select---</option>");
     for(var i = 0; i < KeyForSaveList.length; i++){
       var option = $("<option>"+KeyForSaveList[i]+"</option>");
       $('#selectlist').append(option);
