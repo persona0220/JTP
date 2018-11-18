@@ -138,8 +138,14 @@ function doOpen(){
   $('#selectlist').change(changeOption);
 
   $('#openall').click(function () {
+    var savedTabs = [];
     $('.tab').find('.url').each(function() {
-      chrome.tabs.create({"url":$(this).text(), "selected": false});
+      savedTabs.push($(this).text());
+    });
+    chrome.windows.create({"url":savedTabs[0]}, function (window) {
+      for(var i = 1; i < savedTabs.length; i++) {
+        chrome.tabs.create({"windowId":window.id, "url":savedTabs[i]});
+      }
     });
     deleteOption(this);
   })
