@@ -1,6 +1,7 @@
 /*
  * function that start with dom starting
  */
+
 $(function () {
   $('#order').click(doOrder);
   $('#split').click(doSplit);
@@ -11,7 +12,14 @@ $(function () {
 // Order
 function doOrder(){
   var background = chrome.extension.getBackgroundPage();
-  addOption('order');
+
+  showPreview();
+  if($("#option-order").css("display") === "block") {
+    $("#option-order").css("display", "none");
+    $('#order').removeClass("active");
+  } else {
+    toggleOption('order');
+  }
 
   $('.option-button').click(function () {
     switch($(this).text()){
@@ -25,32 +33,43 @@ function doOrder(){
         background.handleOrder('title');
         break;
     }
-    deleteOption(this);
-  })
+    $("option-order").toggle();
+    $("#option-order").css("display", "none");
+    $('#order').removeClass("active");
+  });
 }
 
 // Split
 function doSplit(){
-
-  //혹시 background.js 와 연결이 필요할 때 사용
   var background = chrome.extension.getBackgroundPage();
 
-  addOption('split');
+  showPreview();
+  if($("#option-split").css("display") === "block") {
+    $("#option-split").css("display", "none");
+    $('#split').removeClass("active");
+  } else {
+    toggleOption('split');
+  }
 
-
-  $('.option-button').click(function () {
+  $('#split-button').click(function () {
     //TODO: 여러 탭에서 검색하는 기능 구현 --> 검색 일치하는 탭들만 색 변경해주기
     var keyword = $('#keyword').val();
-    background.handleWindow('all', keyword);
+    background.handleWindow('title', keyword);
     //위에서 생겨난 옵션들 파괴
-    deleteOption(this);
+    $("#option-split").css("display", "none");
+    $('#split').removeClass("active");
   })
 }
 
 // Save
 function doSave(){
-  var background = chrome.extension.getBackgroundPage();
-  addOption('save');
+  showPreview();
+  if($("#option-save").css("display") === "block") {
+    $("#option-save").css("display", "none");
+    $('#save').removeClass("active");
+  } else {
+    toggleOption('save');
+  }
 
   //Get the list of saved names (for autocomplete)
 
@@ -85,16 +104,10 @@ function doSave(){
 
       if (!listname) {
         alert('name box is empty'); //TODO for Design: Alert 보단 예쁘게..
-        return;
-      }
-
-      else if (localStorage.getItem(listname) != null) {
+      } else if (localStorage.getItem(listname) != null) {
         // TODO: Already Exist 에러 대신 --> Append 하도록 구현
         alert('Already Exist!');
-        return;
-      }
-
-      else{
+      } else {
         localStorage.setItem(listname, JSON.stringify(saveList));
 
         //Update the list of names
@@ -106,18 +119,24 @@ function doSave(){
           KeyForSaveList.push(listname);
           chrome.storage.local.set({'saveList' : KeyForSaveList});
         });
+        $("#option-save").css("display", "none");
+        $('#save').removeClass("active");
       }
     });
-    deleteOption(this);
-  })
+  });
 }
 
 //Open
 function doOpen(){
+  if($("#option-open").css("display") === "block") {
+    $("#option-open").css("display", "none");
+    $('#open').removeClass("active");
+    showPreview();
+  } else {
+    toggleOption('open');
+  }
 
-  addOption('open');
-  $('#tab-list').empty()
-  var background = chrome.extension.getBackgroundPage();
+  $('#tab-list').empty();
 
   chrome.storage.local.get('saveList', function (result) {
     var KeyForSaveList = [];
@@ -145,7 +164,8 @@ function doOpen(){
         chrome.tabs.create({"windowId":window.id, "url":savedTabs[i]});
       }
     });
-    deleteOption(this);
+    $("#option-open").css("display", "none");
+    $('#open').removeClass("active");
   })
 }
 
@@ -165,15 +185,59 @@ function changeOption(){
 
 
 //Add option for each feature
-function addOption(command){
-  $('#field').empty();
-  showPreview();
-  var div = document.createElement('div');
-  div.innerHTML = document.getElementById('option-'+command).innerHTML;
-  document.getElementById('field').appendChild(div);
-}
+function toggleOption(command) {
+  switch (command) {
+    case 'order':
+      $("#option-order").css("display", "block");
+      $('#order').addClass("active");
 
-//Delete option window
-function deleteOption(obj){
-  document.getElementById('field').removeChild(obj.parentNode);
+      $("#option-split").css("display", "none");
+      $('#split').removeClass("active");
+
+      $("#option-save").css("display", "none");
+      $('#save').removeClass("active");
+
+      $("#option-open").css("display", "none");
+      $('#open').removeClass("active");
+      break;
+    case 'split':
+      $("#option-order").css("display", "none");
+      $('#order').removeClass("active");
+
+      $("#option-split").css("display", "block");
+      $('#split').addClass("active");
+
+      $("#option-save").css("display", "none");
+      $('#save').removeClass("active");
+
+      $("#option-open").css("display", "none");
+      $('#open').removeClass("active");
+      break;
+    case 'save':
+      $("#option-order").css("display", "none");
+      $('#order').removeClass("active");
+
+      $("#option-split").css("display", "none");
+      $('#split').removeClass("active");
+
+      $("#option-save").css("display", "block");
+      $('#save').addClass("active");
+
+      $("#option-open").css("display", "none");
+      $('#open').removeClass("active");
+      break;
+    case 'open':
+      $("#option-order").css("display", "none");
+      $('#order').removeClass("active");
+
+      $("#option-split").css("display", "none");
+      $('#split').removeClass("active");
+
+      $("#option-save").css("display", "none");
+      $('#save').removeClass("active");
+
+      $("#option-open").css("display", "block");
+      $('#open').addClass("active");
+      break;
+  }
 }

@@ -47,18 +47,6 @@ select, input {
   }
 }
 
-select {
-  margin-right: 5%;
-
-  background: {
-    image: url("/resources/selector.png");
-    color: white;
-    repeat: no-repeat;
-    position: calc(100% - 10px);
-    size: 16px;
-  }
-}
-
 button {
   margin-top: 10px;
   width: 100%;

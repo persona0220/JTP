@@ -18,33 +18,36 @@
 <script src="../js/jquery/jquery-ui.js"></script>
 
 <body>
-<div class="title">Jong Tab Project <span id="error-message"></span></div>
+<div class="title"> <span id="error-message"></span></div>
 
 <div class="command-line">
 
-  <button id="order">ORDER</button>
-  <button id="split">SPLIT</button>
-  <button id="save">SAVE</button>
-  <button id="open">OPEN</button>
+  <button class="order" id="order"><span>ORDER</span></button>
+  <button class="split" id="split"><span>SPLIT</span></button>
+  <button class="save" id="save"><span>SAVE</span></button>
+  <button class="open" id="open"><span>OPEN</span></button>
 
   <div id="field"></div>
 
   <div id="option-order" style="display:none">
-    <button class="option-button" val="URL">URL</button> <button class="option-button">TIME</button> <button class="option-button">TITLE</button>
+    <button class="order option-button"><span>URL</span></button>
+    <button class="order option-button"><span>TIME</span></button>
+    <button class="order option-button"><span>TITLE</span></button>
   </div>
 
   <div id="option-split" style="display:none">
-    <input type="text" id="keyword" placeholder="keyword"> <button class="option-button">SPLIT</button>
+    <input class="split" type="text" id="keyword" placeholder="keyword">
+    <button class="split" id="split-button"><span>SPLIT</span></button>
   </div>
 
   <div id="option-save" style="display:none">
-    <input type="text" id="savedList" placeholder="ListName"> </input>
-    <button id="submit">SAVE</button>
+    <input class="save" type="text" id="savedList" placeholder="ListName">
+    <button class="save" id="submit"><span>SAVE</span></button>
   </div>
 
   <div id="option-open" style="display:none">
-    <select id="selectlist"> </select>
-    <button id="openall">OPEN</button>
+    <label for="selectlist"></label><select class="open" id="selectlist"></select>
+    <button class="open" id="openall"><span>OPEN</span></button>
   </div>
 
 </div>

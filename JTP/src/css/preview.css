@@ -1,26 +1,31 @@
 body {
-  margin: 0 auto;
+  margin: 10px;
   width: 600px;
-  color: #424242; }
+  color: #424242;
+}
   body > .preview {
-    margin: 5px; }
+    margin: 5px;
+  }
     body > .preview > .title {
-      margin: 0 1.5%;
+      margin: 0 1.5% 10px;
       font-size: 18px;
       font-weight: bold;
-      color: #b99458; }
+      color: #b99458;
+    }
 
 #tab-list {
   border-radius: 4px;
-  height: 90%;
-  overflow: scroll; }
+  height: 100%;
+  overflow: scroll;
+}
   #tab-list::-webkit-scrollbar {
-    display: none; }
+    display: none;
+  }
   #tab-list > .tab {
     position: relative;
-    float: left;
-    width: 90%;
-    cursor: pointer; }
+    width: 95%;
+    cursor: pointer;
+  }
     #tab-list > .tab > .delete {
       display: none;
       position: absolute;
@@ -28,53 +33,47 @@ body {
       right: -7px;
       width: 20px;
       height: 20px;
-      background-image: url("../../resources/delete.png");
-      background-repeat: no-repeat;
+      background: url("../../resources/delete.png") no-repeat;
       background-size: 20px;
-      cursor: pointer; }
+      cursor: pointer;
+    }
     #tab-list > .tab > .cover {
       padding: 8px;
       height: 30px;
       line-height: 30px;
-      background-color: #424242;
-      color: white; }
+      background-color: #fff;
+      color: black;
+    }
       #tab-list > .tab > .cover > .favicon {
         float: left;
         margin-right: 8px;
         width: 30px;
         height: 30px;
-        background-color: white;
-        border-radius: 15px; }
+        border-radius: 15px;
+      }
       #tab-list > .tab > .cover > .title {
         float: left;
         width: calc(100% - 38px);
         font-size: 16px;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: pre; }
-    #tab-list > .tab > .content {
-      padding: 3px;
-      height: 100px;
-      line-height: 11px;
-      background-color: #eeeeee;
-      box-sizing: border-box;
-      text-align: center; }
-      #tab-list > .tab > .content > .screen {
-        max-width: 100%;
-        height: 100%; }
-    #tab-list > .tab > .url {
-      padding: 3px;
-      height: 90px;
-      line-height: 11px;
-      background-color: #eeeeee;
-      font-size: 8px;
-      overflow: hidden; }
+        white-space: pre;
+      }
     #tab-list > .tab.active > .cover {
-      background-color: #FFBF00; }
+      background-color: #FFBF00;
+    }
+    #tab-list > .tab.active:hover > .cover {
+      background-color: #FFBF00;
+    }
     #tab-list > .tab:hover {
       transition: box-shadow .3s ease-out;
-      box-shadow: 0 0 10px; }
+      box-shadow: 0 0 10px;
+    }
+      #tab-list > .tab:hover > .cover {
+        background-color: #EEEEEE;
+      }
       #tab-list > .tab:hover > .delete {
-        display: block; }
+        display: block;
+      }
 
 /*# sourceMappingURL=preview.css.map */
