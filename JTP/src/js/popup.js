@@ -3,7 +3,7 @@
  */
 $(function () {
   $('#order').click(doOrder);
-  $('#find').click(doFind);
+  $('#split').click(doSplit);
   $('#save').click(doSave);
   $('#open').click(doOpen);
 });
@@ -29,21 +29,19 @@ function doOrder(){
   })
 }
 
-// Find
-function doFind(){
+// Split
+function doSplit(){
 
   //혹시 background.js 와 연결이 필요할 때 사용
   var background = chrome.extension.getBackgroundPage();
 
-  //find 에 해당하는 옵션들을 띄워줌
-
-  addOption('find');
+  addOption('split');
 
 
   $('.option-button').click(function () {
     //TODO: 여러 탭에서 검색하는 기능 구현 --> 검색 일치하는 탭들만 색 변경해주기
-      var keyword = $('#keyword').val();
-      background.handleWindow('title', keyword);
+    var keyword = $('#keyword').val();
+    background.handleWindow('all', keyword);
     //위에서 생겨난 옵션들 파괴
     deleteOption(this);
   })
@@ -128,7 +126,7 @@ function doOpen(){
     }
 
     $('#selectlist').empty();
-    $('#selectlist').append("<option>---select---</option>");
+    $('#selectlist').append("<option>-----select-----</option>");
     for(var i = 0; i < KeyForSaveList.length; i++){
       var option = $("<option>"+KeyForSaveList[i]+"</option>");
       $('#selectlist').append(option);
