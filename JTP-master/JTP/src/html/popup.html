@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Jong Tab Project</title>
+<meta charset="UTF-8"/>
+
+<link rel="stylesheet" href="../css/defaults.css">
+<link rel="stylesheet" href="../css/popup.css">
+<link rel="stylesheet" href="../css/jquery-ui.css">
+<link rel="stylesheet" href="../css/preview.css">
+
+<script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery-ui.js"></script>
+
+<script type="text/javascript" src="../js/popup.js"></script>
+<script type="text/javascript" src="../js/tab_div.js"></script>
+<script type="text/javascript" src="../js/preview.js"></script>
+
+<script src="../js/jquery/jquery-ui.js"></script>
+
+<body>
+<div class="title"> <span id="error-message"></span></div>
+
+<div class="command-line">
+    <button class="order" id="order"><span>ORDER</span></button>
+    <button class="search" id="search"><span>SEARCH</span></button>
+    <button class="split" id="split"><span>SPLIT</span></button>
+    <button class="save" id="save"><span>SAVE</span></button>
+    <button class="open" id="open"><span>OPEN</span></button>
+    <div id="field"></div>
+    <div id="option-order" style="display:none">
+        <button class="order option-button"><span>URL</span></button>
+        <button class="order option-button"><span>TIME</span></button>
+        <button class="order option-button"><span>TITLE</span></button>
+    </div>
+    <div id="option-search" style="display:none">
+        <input class="search" type="text" id="search-keyword" placeholder="keyword">
+        <button class="search" id="search-button"><span>SEARCH</span></button>
+        <button class="search" id="search-clear-button"><span>CLEAR</span></button>
+    </div>
+    <div id="option-split" style="display:none">
+        <input class="split" type="text" id="keyword" placeholder="keyword">
+        <button class="split" id="split-button"><span>SPLIT</span></button>
+    </div>
+    <div id="option-save" style="display:none">
+        <input class="save" type="text" id="savedList" placeholder="ListName">
+        <button class="save" id="submit"><span>SAVE</span></button>
+    </div>
+    <div id="option-open" style="display:none">
+        <label for="selectlist"></label><select class="open" id="selectlist"></select>
+        <button class="open" id="openall"><span>OPEN</span></button>
+    </div>
+</div>
+<div class="search-preview">
+    <div id="search-tab-list"></div>
+</div>
+<div class="preview">
+  <div class="title">Preview Your Tabs</div>
+  <div id="tab-list"></div>
+</div>
+
+<div id="guideline"></div>
+</body>
+
+</html>

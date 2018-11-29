@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 20px;
+  width: 600px;
+  height: 150px;
+  background: #FFF;
+  color: #424242;
+}
+  body div {
+    margin-bottom: 10px;
+  }
+  body > .title {
+    font-weight: bold;
+  }
+    body > .title > span {
+      color: #EE5757;
+    }
+  body > #guideline {
+    color: #757575;
+    text-align: center;
+    font-size: 11px;
+  }
+
+input, select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  width: 20%;
+  height: 40px;
+  border: 2.5px solid #D24D57;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: black;
+  background-color: #FFF;
+}
+  input.order, select.order {
+    border: 2.5px solid #D24D57;
+  }
+    input.split, select.split {
+        border: 2.5px solid #AEA8D3;
+    }
+  input.search, select.search {
+    border: 2.5px solid #80C0C9;
+  }
+  input.save, select.save {
+    border: 2.5px solid #65b37a;
+  }
+  input.open, select.open {
+    border: 2.5px solid #F7CA18;
+  }
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 16%;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
+}
+  button.order, button.order.option-button {
+    border: 2.5px solid #D24D57;
+  }
+    button.order.active, button.order:hover, button.order.option-button:hover {
+      background-color: #D24D57;
+    }
+  button.split {
+    border: 2.5px solid #AEA8D3;
+  }
+    button.split.active, button.split:hover {
+      background-color: #AEA8D3;
+    }
+  button.split {
+    border: 2.5px solid #AEA8D3;
+  }
+    button.split.active, button.split:hover {
+      background-color: #AEA8D3;
+    }
+    button.search {
+        border: 2.5px solid #80C0C9;
+    }
+        button.search.active, button.search:hover {
+            background-color: #80C0C9;
+        }
+  button.save {
+    border: 2.5px solid #65b37a;
+  }
+    button.save.active, button.save:hover {
+      background-color: #65b37a;
+    }
+  button.open {
+    border: 2.5px solid #F7CA18;
+  }
+    button.open.active, button.open:hover {
+      background-color: #F7CA18;
+    }
+
+/*# sourceMappingURL=manager.css.map */

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Jong Tab Project",
+  "version": "1.0.0",
+  "description": "Jong Tab Project provides various features to help manage tabs.",
+  "background": {
+    "scripts": ["src/js/jquery/jquery.min.js", "src/js/background.js"]
+  },
+  "browser_action": {
+    "default_icon": "resources/icon_128.png",
+    "default_title": "Smart Tab Manager",
+    "default_popup": "src/html/popup.html"
+  },
+  "icons": {
+    "128": "resources/icon_128.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": ["src/js/contents.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "src/html/command_box.html"
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+H",
+        "windows": "Ctrl+Shift+H",
+        "mac": "Command+Shift+H"
+      }
+    }
+  }
+}
