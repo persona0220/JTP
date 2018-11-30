@@ -69,7 +69,7 @@ function createSearchTabDiv(tabInfo) {
         newTabDiv.find('.screen').attr('src', screenUrl);
     }
 
-    newTabDiv.addClass('search');
+    //newTabDiv.addClass('search');
 
     if (tabInfo.highlighted) {
         newTabDiv.addClass('active');

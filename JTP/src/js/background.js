@@ -126,6 +126,7 @@ function handleWindow(option, keyword) {
 function handleSearch(option, keyword) {
     var searchTabs = [];
     chrome.storage.local.remove('TabSearchResult');
+    console.log("handele");
     search(keyword, function (searchTabList) {
         setTimeout(function () {
             searchTabs = [];
@@ -153,7 +154,7 @@ function handleSearch(option, keyword) {
                         var searchList = [];
 
                         for (var i = 0; i < tabs.length; i++) {
-                            searchList.push({ url: tabs[i].url, title: tabs[i].title, favIconUrl: tabs[i].favIconUrl, keyword: keyword });
+                            searchList.push({ id: tabs[i].id, url: tabs[i].url, title: tabs[i].title, favIconUrl: tabs[i].favIconUrl, keyword: keyword });
 
                         }
                         //localStorage.setItem('TabSearchResult', JSON.stringify(searchList), function () { });
@@ -178,6 +179,7 @@ function search(keyword, callBackFunc) {
         insertErrorMessage("input any keyword");
         return;
     }
+    console.log('search');
     keyword = keyword.toLowerCase();
     var selectedTabs = [];
     chrome.tabs.query({ "currentWindow": true }, function (tabs) {

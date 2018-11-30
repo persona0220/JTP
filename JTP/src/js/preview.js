@@ -18,25 +18,25 @@ function showPreview() {
 }
 
 function showSearchPreview() {
-    var tabList = $('#search-tab-list');
-    //sortTabDiv(tabList);
+    //var tabList = $('#search-tab-list');
+    var tabList = $('#tab-list');
+    sortTabDiv(tabList);
 
     chrome.storage.local.get('TabSearchResult', function (result) {
         tabList.empty();
         var tabs = result.TabSearchResult;
         if (tabs.length < 1) { } else {
             for (var i = 0; i < tabs.length; i++) {
-                var newTab = createSearchTabDiv(tabs[i]);
+                //var newTab = createSearchTabDiv(tabs[i]);
+                var newTab = createTabDiv(tabs[i]);
+                //alert(tabs[i].id);
                 tabList.append(newTab);
             }
         }
     });
-
-
-    
 }
 
-function cleaarSearchPreview() {
+function clearSearchPreview() {
     var tabList = $('#search-tab-list');
     tabList.empty();
 }
